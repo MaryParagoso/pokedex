@@ -1,13 +1,208 @@
+/* index.css */
+
 body {
+  font-family: 'Courier New', Courier, monospace;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://i0.wp.com/animeindia.in/wp-content/uploads/2023/08/Pokemon-go-palada.jpg');
+  background-size: cover;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.pokegame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  justify-content: center;
+  height: 100vh;
+}
+
+.pokegame .row {
+  display: flex;
+  text-align: center;
+}
+
+.pokegame .row>div {
+  flex: 1;
+  margin: 5px;
+}
+
+h2 {
+  font-family: 'Courier New', Courier, monospace;
+  color: #000000;
+  text-align: center;
+  margin: 3px;
+  font-size: 33px;
+  font-weight: bolder;
+}
+
+.pokedex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  border-radius: 8px;
+  background-color: #e9292958;
+  width: 550px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+
+.winner-message {
+  width: 200px;
+  padding-top: 100%;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2rem;
+  font-style: oblique;
+  font-weight: bold;
+  color: #000000;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+}
+
+.pokecard {
+  border: 7px solid #000000;
+  border-radius: 8px;
+  margin: 8px;
+  padding: 8px;
+  text-align: center;
+  width: 170px;
+  background-color: #f4dc26be;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.pokecard img {
+  width: 100%;
+  height: auto;
+  max-height: 100px;
+  width: 111px;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 5px;
+  margin-bottom: 3px;
+}
+
+h3 {
+  font-family: 'young serif', serif;
+  font-size: 28px;
+  margin: 5px;
+  color: #000000;
+}
+
+p {
+  font-size: 18px;
+  margin: 5px;
+}
+
+.totalEXP {
+  padding: 20px;
+  margin: 5px;
+  font-size: 18px;
+  font-weight: 450;
+  border: 2px solid #000000;
+  background-color: #f5f6f59d;
+  border-radius: 50%;
+  color: #e10909;
+}
+
+@media only screen and (max-width: 768px) {
+  .pokecard {
+    width: 100%;
+  }
+
+  .pokecard img {
+    max-height: 120px;
+  }
+}
+
+.pokegame-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 8px;
+  background-color: #00000081;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.middleClass {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 15vh;
+  background: url('https://camo.githubusercontent.com/418d92ecbe7cd1805153001a34147ab7c965103432ff4a68eaa2fc5d4e6c1b42/68747470733a2f2f696b2e696d6167656b69742e696f2f6877796b73766a3469762f706f6b656465785f4e5f576757724a4B30732e706e67') center/cover no-repeat;
+  width: 150px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 12px;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.mainFunction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 200%;
+  position: absolute; 
+  width: 160px;
+  height: 160px; 
+}
+
+.mainFunction button {
+  border-radius: 50%;
+  padding: 50px 25px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 25px;
+  background-color: #e3dfdf85; 
+  color: #141313; 
+  font-weight: bold; 
+  margin-top: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s; 
+  border: 5px solid #0000005d;
+}
+
+.mainFunction button:hover {
+  background-color: #dd383c;
+}
+
+.announceWinner {
+  padding-top:110%;
+  font-size: 50px;
+  font-weight: bolder;
+  color: #386ab4;
+  background: #e10909; /* Background color */
+  -webkit-background-clip: text; /* Clip the background to the text */
+  background-clip: text;
+  display: inline-block; 
 }
